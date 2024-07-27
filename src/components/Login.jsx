@@ -3,18 +3,25 @@ import React,{useState, useEffect, useRef} from 'react'
 import Logo from '../openDatum.jpg'
 function Login() {
     const Component = styled(Box)`
-        width: 400px;
-        
+        width: auto;
+        height: auto;
         margin: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     `
+
+    const Image = styled('img')({
+        width: '200px',
+        height: '100px',
+        
+      
+    })
   return (
       <>
       <Component>
-        <img src={Logo} alt="OpenDatum Logo" />
+        <Image src={Logo} alt="OpenDatum Logo" />
           <div>Login</div>
           <TextField name="email" placeholder='Email Address' label="Email" variant="standard" />
           <TextField name="password" placeholder='Passowrd' type='password' label="Password" variant="standard" />
