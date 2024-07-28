@@ -1,10 +1,7 @@
-
 const express = require('express')
-
+const {signupUser} = require('../controller/userController')
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Hello from the API!' })
-})
+router.post('/Signup', signupUser)
 
 module.exports = router
