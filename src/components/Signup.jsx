@@ -38,7 +38,7 @@ function Signup() {
     const onInputChange = (e) =>{
       //e.preventDefault()
        console.log(e.target.name,e.target.value);
-       setInput({...input,[e.target.name]: e.target.value})
+       //setInput({...input,[e.target.name]: e.target.value})
    }
    const handleRegister = () => {
     //e.preventDefault()
@@ -60,7 +60,7 @@ function Signup() {
         <form> 
 
             <Wrap>
-          <TextField style={{marginTop:10}} name="email" onChange={onInputChange} placeholder='Email Address' label="Email" variant="standard" />
+          <TextField style={{marginTop:10}} name="email" onChange={(e)=> onInputChange(e)} placeholder='Email Address' label="Email" variant="standard" />
           <TextField style={{marginTop:10}} name="password" placeholder='Passowrd' type='password' label="Password" variant="standard" autoComplete='off' />
           <TextField style={{marginTop:10}} name="repassword" placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="standard" autoComplete='off'/>
           <Button style={{marginTop:10}} variant="contained" >Register </Button>
