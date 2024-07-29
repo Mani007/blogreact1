@@ -56,7 +56,7 @@ function Login() {
 
     const onInputChange = (e) =>{
        e.preventDefault()
-        console.log(e.target.name,e.target.value);
+        //console.log(e.target.name,e.target.value);
         setInput({...input,[e.target.name]: e.target.value})
     }
 
@@ -75,22 +75,37 @@ function Login() {
   return (
       <>
      
-      <Component>
-        <Box>
+      {/* <Component> */}
+        <Box style={{width: 'auto',
+        height: 'auto',
+        margin: 'auto',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',}}>
 
         <Image src={Logo} alt="OpenDatum Logo" />
         <form>
+            <Box style={{
+            padding: '25px 25px',
+        
+            display: 'flex',
+            flex: 1,
+            flexDirection: 'column',
+          }}>
 
-            <Wrap>
-            
+            {/* <Wrap> */}
+
           <TextField id="1" style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="youremail" value={input.youremail} placeholder='Email Address' label="Email" variant="outlined" />
           <TextField id="2" style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="yourpassword" value={input.yourpassword} placeholder='Passowrd' type='password' label="Password" variant="outlined" autoComplete="off" />
           <Button style={{marginTop:20}} variant="contained">Login</Button>
           <Button style={{marginTop:10}} variant="text" >Create an account </Button>
-            </Wrap>
+            {/* </Wrap> */}
+            </Box>
         </form>
         </Box>
-      </Component> 
+      {/* </Component>  */}
       </>
   )
 }

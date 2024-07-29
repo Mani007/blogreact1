@@ -39,7 +39,7 @@ function Signup() {
 
     const onInputChange = (e) =>{
       //e.preventDefault()
-       console.log(e.target.name,e.target.value);
+       //console.log(e.target.name,e.target.value);
        setInputVal({...inputval,[e.target.name]: e.target.value})
    }
    const handleRegister = async(e) => {
