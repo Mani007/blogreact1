@@ -9,16 +9,16 @@ function Signup() {
     repassword: '',
 }
   const [inputval, setInputVal] = useState(signUpInitial)
-    const Component = styled(Box)`
-        width: auto;
-        height: auto;
-        margin: auto;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    `
+    const Component = styled(Box)({
+        width: 'auto',
+        height: 'auto',
+        margin: 'auto',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      })
 
     const Image = styled('img')({
         width: '200px',
