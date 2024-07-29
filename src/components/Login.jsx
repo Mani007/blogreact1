@@ -1,7 +1,8 @@
 import { Box, Button, styled, TextField } from '@mui/material'
-import React,{useState, useEffect, useRef} from 'react'
+import React,{useState, useEffect, useRef, useContext} from 'react'
 import Logo from '../openDatum.jpg'
 import { API } from '../apiservices/api';
+import { DataContext } from '../context/DataProvider';
 function Login() {
    
     const [input, setInput] = useState({
@@ -9,7 +10,7 @@ function Login() {
         password: '',
     })
     
-    
+    const {setUser} = useContext(DataContext)
 
     const Image = styled('img')({
         width: '200px',
@@ -42,7 +43,8 @@ function Login() {
                if (result.isSuccess) {
                 
                    sessionStorage.setItem('access_token', `Bearer ${result.data.accessToken}`)            
-                   sessionStorage.setItem('refresh_token', `Bearer ${result.data.refreshToken}`)            
+                   sessionStorage.setItem('refresh_token', `Bearer ${result.data.refreshToken}`)       
+                   setUser({username: result.data.userName})     
                }
             } catch (err) {
                 console.log(err)
