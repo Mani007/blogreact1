@@ -7,11 +7,6 @@ function Login() {
     const [input, setInput] = useState({
         email: '',
         password: '',
-        repassword: '',
-        youremail: '',
-        yourpassword: '',
-        
-    
     })
     //const [repass, setRePass] = useState(null)
     // const [passMatch, setPassMatch] = useState(null)
@@ -45,31 +40,28 @@ function Login() {
 
     `
 
-    const handleLogin = () => {
-        
-        setUser('login')
-    }
-    const handleSignup = () => {
-        
-        setUser('signup')
-    }
+   
 
     const onInputChange = (e) =>{
-       e.preventDefault()
+       //e.preventDefault()
         //console.log(e.target.name,e.target.value);
         setInput({...input,[e.target.name]: e.target.value})
     }
 
-    const handleRegister = () => {
+    const handleLogin = async() => {
         //e.preventDefault()
-        if(input.password === input.repassword){
+        console.log(input)
             //Register logic and api call using axios and axios interceptors
-            
-            API.userSignUp({email: input.email, password: input.password})
-            setUser('login')
-        }else{
-            alert('Passwords do not match')
-        }
+           try {
+
+               const result =await API.login({input})
+               console.log(result)           
+            } catch (err) {
+                console.log(err)
+                
+ 
+            } 
+       
     }
 
   return (
@@ -97,9 +89,9 @@ function Login() {
 
             {/* <Wrap> */}
 
-          <TextField id="1" style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="youremail" value={input.youremail} placeholder='Email Address' label="Email" variant="outlined" />
-          <TextField id="2" style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="yourpassword" value={input.yourpassword} placeholder='Passowrd' type='password' label="Password" variant="outlined" autoComplete="off" />
-          <Button style={{marginTop:20}} variant="contained">Login</Button>
+          <TextField id="1" style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="email" value={input.email} placeholder='Email Address' label="Email" variant="outlined" />
+          <TextField id="2" style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="password" value={input.password} placeholder='Passowrd' type='password' label="Password" variant="outlined" autoComplete="off" />
+          <Button style={{marginTop:20}} variant="contained" onClick={handleLogin}>Login</Button>
           <Button style={{marginTop:10}} variant="text" >Create an account </Button>
             {/* </Wrap> */}
             </Box>

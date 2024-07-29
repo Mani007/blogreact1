@@ -4,6 +4,10 @@ export const SERVICE_URLS= {
     userSignUp: {
         url: '/signup',
         method: 'POST'
+    },
+    login: {
+        url: '/login',
+        method: 'POST'
     }
 
 } 
