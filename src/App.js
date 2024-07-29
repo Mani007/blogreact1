@@ -11,8 +11,8 @@ function App() {
      
         {/* <Base/> */}
         {/* <Login/> */}
-      {/* <Signup/> */}
-        <Userreg/>
+      <Signup/>
+        {/* <Userreg/> */}
 
     </>
   );
