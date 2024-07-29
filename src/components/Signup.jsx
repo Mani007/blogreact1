@@ -42,9 +42,14 @@ function Signup() {
        console.log(e.target.name,e.target.value);
        setInputVal({...inputval,[e.target.name]: e.target.value})
    }
-   const handleRegister = () => {
-    //e.preventDefault()
-    API.userSignUp({email: inputval.email, password: inputval.password})
+   const handleRegister = async() => {
+    try {
+
+      //e.preventDefault()
+      let res = await API.userSignUp({email: inputval.email, password: inputval.password})
+    } catch (err) {
+      console.log(err)
+    }
    // if(inputval.password === inputval.repassword){
         //Register logic and api call using axios and axios interceptors
         

@@ -13,6 +13,14 @@ const axiosInstance = axios.create({
     }
 })
 axiosInstance.interceptors.request.use(
+    function (config){
+        return config
+    },
+    function (error) {
+        return Promise.reject(error)
+    }
+)
+axiosInstance.interceptors.response.use(
     function (response){
         return processResponse(response)
     },
@@ -54,7 +62,7 @@ const processError = (error) => {
 const API = {};
 
 for (const [key, value] of Object.entries(SERVICE_URLS)){
-    //console.log(key, value); //working correctly
+    //console.log(value.method); //working correctly
     API[key] = (body, showUploadProgress,showDownloadProgress) => 
         axiosInstance({
             method: value.method,
