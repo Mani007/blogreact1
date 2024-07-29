@@ -83,8 +83,8 @@ function Login() {
 
             <Wrap>
             
-          <TextField style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="youremail"  placeholder='Email Address' label="Email" variant="standard" />
-          <TextField style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="yourpassword"  placeholder='Passowrd' type='password' label="Password" variant="standard" autoComplete="off" />
+          <TextField style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="youremail" value={input.youremail} placeholder='Email Address' label="Email" variant="standard" />
+          <TextField style={{marginTop:10}} onChange={(e)=> onInputChange(e)} name="yourpassword" value={input.yourpassword} placeholder='Passowrd' type='password' label="Password" variant="standard" autoComplete="off" />
           <Button style={{marginTop:20}} variant="contained">Login</Button>
           <Button style={{marginTop:10}} variant="text" >Create an account </Button>
             </Wrap>
