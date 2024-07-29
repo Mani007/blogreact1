@@ -62,22 +62,37 @@ function Signup() {
   return (
       <>
       {/* Styled component and CSS classes are not good for the component operations */}
-      <Component>
-        <Box>
+      {/* <Component> */}
+        <Box style={{width: 'auto',
+        height: 'auto',
+        margin: 'auto',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',}}>
 
         <Image src={Logo} alt="OpenDatum Logo" />
         <form> 
+          <Box style={{
+            padding: '25px 25px',
+        
+            display: 'flex',
+            flex: 1,
+            flexDirection: 'column',
+          }}>
 
             {/* <Wrap> */}
-          <TextField style={{marginTop:10}} name="email" onChange={onInputChange}  placeholder='Email Address' label="Email" variant="outlined" />
-          <TextField style={{marginTop:10}} name="password" onChange={onInputChange} placeholder='Passowrd' type='password' label="Password" variant="outlined" autoComplete='off' />
-          <TextField style={{marginTop:10}} name="repassword" onChange={onInputChange} placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="outlined" autoComplete='off'/>
+          <TextField style={{marginTop:10,  margin: 'auto',}} name="email" onChange={onInputChange}  placeholder='Email Address' label="Email" variant="outlined" />
+          <TextField style={{marginTop:10,  margin: 'auto',}} name="password" onChange={onInputChange} placeholder='Passowrd' type='password' label="Password" variant="outlined" autoComplete='off' />
+          <TextField style={{marginTop:10,  margin: 'auto',}} name="repassword" onChange={onInputChange} placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="outlined" autoComplete='off'/>
           <Button style={{marginTop:10}} variant="contained" onClick={(e) => handleRegister(e)} >Register </Button>
           <Button style={{marginTop:20}} variant="text" >Already a user! Login here</Button>
             {/* </Wrap> */}
+          </Box>
         </form>
         </Box>
-      </Component>
+      {/* </Component> */}
       </>
   )
 }
