@@ -3,11 +3,12 @@ import React,{useState, useEffect, useRef} from 'react'
 import Logo from '../openDatum.jpg'
 import { API } from '../apiservices/api';
 function Signup() {
-  const [input, setInput] = useState({
+  const signUpInitial = {
     email: '',
     password: '',
     repassword: '',
-})
+}
+  const [inputval, setInputVal] = useState(signUpInitial)
     const Component = styled(Box)`
         width: auto;
         height: auto;
@@ -35,17 +36,18 @@ function Signup() {
         flex: 1;
         flex-direction: column;
     `
+
     const onInputChange = (e) =>{
       //e.preventDefault()
        console.log(e.target.name,e.target.value);
-       //setInput({...input,[e.target.name]: e.target.value})
+       setInputVal({...inputval,[e.target.name]: e.target.value})
    }
    const handleRegister = () => {
     //e.preventDefault()
-    if(input.password === input.repassword){
+    if(inputval.password === inputval.repassword){
         //Register logic and api call using axios and axios interceptors
         
-        API.userSignUp({email: input.email, password: input.password})
+        API.userSignUp({email: inputval.email, password: inputval.password})
         //setUser('login')
     }else{
         alert('Passwords do not match')
