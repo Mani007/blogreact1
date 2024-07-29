@@ -52,7 +52,7 @@ const login = async (req, res) => {
         res.cookie('Authorization', token, { expires: new Date(exp), httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production' });
         // send the token in the cookie
         //res.json({ token }); // never send token to the local storage prefer cookie
-        res.sendStatus(200)
+        if (isMatch) return res.status(200).json({ accessToken:token, refreshToken: refreshToken, userName: User.email });
         
     } catch (err) {
         console.error(err);
