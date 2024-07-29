@@ -32,12 +32,12 @@ function Login() {
 
     const handleLogin = async(e) => {
         e.preventDefault()
-        console.log(input)
+        //console.log(input)
             //Register logic and api call using axios and axios interceptors
            try {
 
                const result =await API.login(input)
-               console.log(result.data)           
+               console.log(result)           
             } catch (err) {
                 console.log(err)
                 
