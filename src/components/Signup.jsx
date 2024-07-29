@@ -42,10 +42,10 @@ function Signup() {
        console.log(e.target.name,e.target.value);
        setInputVal({...inputval,[e.target.name]: e.target.value})
    }
-   const handleRegister = async() => {
+   const handleRegister = async(e) => {
     try {
 
-      //e.preventDefault()
+      e.preventDefault()
       let res = await API.userSignUp({email: inputval.email, password: inputval.password})
     } catch (err) {
       console.log(err)
@@ -61,22 +61,22 @@ function Signup() {
 }
   return (
       <>
-      <Component>
+      {/* <Component> */}
         <Box>
 
         <Image src={Logo} alt="OpenDatum Logo" />
         <form> 
 
-            <Wrap>
-          <TextField style={{marginTop:10}} name="email" onChange={(e)=> onInputChange(e)}  placeholder='Email Address' label="Email" variant="standard" />
-          <TextField style={{marginTop:10}} name="password" placeholder='Passowrd' type='password' label="Password" variant="standard" autoComplete='off' />
-          <TextField style={{marginTop:10}} name="repassword" placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="standard" autoComplete='off'/>
-          <Button style={{marginTop:10}} variant="contained" onClick={() => handleRegister()} >Register </Button>
+            {/* <Wrap> */}
+          <TextField style={{marginTop:10}} name="email" onChange={onInputChange}  placeholder='Email Address' label="Email" variant="outlined" />
+          <TextField style={{marginTop:10}} name="password" onChange={onInputChange} placeholder='Passowrd' type='password' label="Password" variant="outlined" autoComplete='off' />
+          <TextField style={{marginTop:10}} name="repassword" onChange={onInputChange} placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="outlined" autoComplete='off'/>
+          <Button style={{marginTop:10}} variant="contained" onClick={(e) => handleRegister(e)} >Register </Button>
           <Button style={{marginTop:20}} variant="text" >Already a user! Login here</Button>
-            </Wrap>
+            {/* </Wrap> */}
         </form>
         </Box>
-      </Component>
+      {/* </Component> */}
       </>
   )
 }
