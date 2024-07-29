@@ -44,14 +44,15 @@ function Signup() {
    }
    const handleRegister = () => {
     //e.preventDefault()
-    if(inputval.password === inputval.repassword){
+    API.userSignUp({email: inputval.email, password: inputval.password})
+   // if(inputval.password === inputval.repassword){
         //Register logic and api call using axios and axios interceptors
         
-        API.userSignUp({email: inputval.email, password: inputval.password})
+        // API.userSignUp({email: inputval.email, password: inputval.password})
         //setUser('login')
-    }else{
-        alert('Passwords do not match')
-    }
+   // }else{
+     //   alert('Passwords do not match')
+   // }
 }
   return (
       <>
@@ -65,8 +66,8 @@ function Signup() {
           <TextField style={{marginTop:10}} name="email" onChange={(e)=> onInputChange(e)} placeholder='Email Address' label="Email" variant="standard" />
           <TextField style={{marginTop:10}} name="password" placeholder='Passowrd' type='password' label="Password" variant="standard" autoComplete='off' />
           <TextField style={{marginTop:10}} name="repassword" placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="standard" autoComplete='off'/>
-          <Button style={{marginTop:10}} variant="contained" >Register </Button>
-          <Button style={{marginTop:20}} variant="text" onClick={() => handleRegister()}>Already a user! Login here</Button>
+          <Button style={{marginTop:10}} variant="contained" onClick={() => handleRegister()} >Register </Button>
+          <Button style={{marginTop:20}} variant="text" >Already a user! Login here</Button>
             </Wrap>
         </form>
         </Box>

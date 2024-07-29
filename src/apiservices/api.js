@@ -3,7 +3,7 @@ import { SERVICE_URLS } from '../constants/apiServiceCalls';
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://localhost:7000/api/v1/',
+    baseURL: 'http://localhost:7000/api/v1',
     timeout: 10000,
     //validateStatus: function (status) {
     headers: {
@@ -54,7 +54,8 @@ const processError = (error) => {
 const API = {};
 
 for (const [key, value] of Object.entries(SERVICE_URLS)){
-    API[key] = (body, showUploadProgress,showDownloadProgress) => {
+    //console.log(key, value); //working correctly
+    API[key] = (body, showUploadProgress,showDownloadProgress) => 
         axiosInstance({
             method: value.method,
             url: value.url,
@@ -67,13 +68,13 @@ for (const [key, value] of Object.entries(SERVICE_URLS)){
                 }
             },
             onDownloadProgress: function(progressEvent){
-                if (showUploadProgress){
+                if (showDownloadProgress){
                     let percentageComplete = Math.round((progressEvent.loaded*100) / progressEvent.total)
-                    showUploadProgress(percentageComplete)
+                    showDownloadProgress(percentageComplete)
                 }
             },
 
         })
-    }
+    
 }
 export {API}
