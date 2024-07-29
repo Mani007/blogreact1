@@ -62,8 +62,8 @@ function Signup() {
   return (
       <>
       {/* Styled component and CSS classes are not good for the component operations */}
-      {/* <Component> */}
-        <Component>
+      <Component>
+        <Box>
 
         <Image src={Logo} alt="OpenDatum Logo" />
         <form> 
@@ -76,8 +76,8 @@ function Signup() {
           <Button style={{marginTop:20}} variant="text" >Already a user! Login here</Button>
             {/* </Wrap> */}
         </form>
-        </Component>
-      {/* </Component> */}
+        </Box>
+      </Component>
       </>
   )
 }
