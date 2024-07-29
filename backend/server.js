@@ -20,7 +20,7 @@ app.use(cookieParser());
 // import mongoose
 connectToDb()
 
-app.use('/api/v1/base/', Router)
+app.use('/api/v1/', Router)
 
 app.get('/', (req, res) =>{
     res.send('Hello from the server!')
