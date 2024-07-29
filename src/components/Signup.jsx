@@ -46,7 +46,7 @@ function Signup() {
     try {
 
       //e.preventDefault()
-      let res = await API.userSignUp({email: 'a8@a.com', password: '123'})
+      let res = await API.userSignUp({email: inputval.email, password: inputval.password})
     } catch (err) {
       console.log(err)
     }
@@ -68,7 +68,7 @@ function Signup() {
         <form> 
 
             <Wrap>
-          <TextField style={{marginTop:10}} name="email" onChange={(e)=> onInputChange(e)} placeholder='Email Address' label="Email" variant="standard" />
+          <TextField style={{marginTop:10}} name="email" onChange={(e)=> onInputChange(e)}  placeholder='Email Address' label="Email" variant="standard" />
           <TextField style={{marginTop:10}} name="password" placeholder='Passowrd' type='password' label="Password" variant="standard" autoComplete='off' />
           <TextField style={{marginTop:10}} name="repassword" placeholder='Confirm Passowrd' type='password' label="confirm Password" variant="standard" autoComplete='off'/>
           <Button style={{marginTop:10}} variant="contained" onClick={() => handleRegister()} >Register </Button>
