@@ -46,7 +46,7 @@ function Signup() {
     try {
 
       //e.preventDefault()
-      let res = await API.userSignUp({email: inputval.email, password: inputval.password})
+      let res = await API.userSignUp({email: 'a8@a.com', password: '123'})
     } catch (err) {
       console.log(err)
     }
