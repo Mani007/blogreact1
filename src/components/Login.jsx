@@ -37,7 +37,13 @@ function Login() {
            try {
 
                const result =await API.login(input)
-               console.log(result)           
+               //console.log(result)
+               // We can also store the access tokens in browser storage here
+               if (result.isSuccess) {
+                
+                   sessionStorage.setItem('access_token', `Bearer ${result.data.accessToken}`)            
+                   sessionStorage.setItem('refresh_token', `Bearer ${result.data.refreshToken}`)            
+               }
             } catch (err) {
                 console.log(err)
                 
