@@ -16,8 +16,8 @@ export default function ButtonUsage() {
     <>
     <h1>The value of input is {inter.input1}</h1>
     <h1>The value of input111 is {inter.input2}</h1>
-    <TextField variant='outlined' onChange={interdis} name='statement' placeholder='abc' label='some text'/>
-    <TextField variant='outlined' onChange={interdis} name='statement1' placeholder='abc1' label='some text 1'/>
+    <TextField variant='outlined' onChange={interdis} name='input1' placeholder='abc' label='some text'/>
+    <TextField variant='outlined' onChange={interdis} name='input2' placeholder='abc1' label='some text 1'/>
     </>
   )
 }
