@@ -3,8 +3,9 @@ import React,{useState, useEffect, useRef, useContext} from 'react'
 import Logo from '../openDatum.jpg'
 import { API } from '../apiservices/api';
 import { DataContext } from '../context/DataProvider';
+import { useNavigate } from 'react-router-dom';
 function Login() {
-   
+   const navigate = useNavigate()
     const [input, setInput] = useState({
         email: '',
         password: '',
@@ -44,11 +45,12 @@ function Login() {
                 
                    sessionStorage.setItem('access_token', `Bearer ${result.data.accessToken}`)            
                    sessionStorage.setItem('refresh_token', `Bearer ${result.data.refreshToken}`)       
-                   setUser({username: result.data.userName})     
+                   setUser({username: result.data.userName})    
+                   navigate('/base') 
                }
             } catch (err) {
                 console.log(err)
-                
+                navigate('/signup')             
  
             } 
        
