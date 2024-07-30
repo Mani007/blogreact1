@@ -7,11 +7,14 @@ import Signup from "./components/Signup";
 import Userreg from "./pages/Userreg";
 import DataProvider from "./context/DataProvider";
 import Home from "./components/Home";
+import Header from "./components/Header";
+
 function App() {
   return (
     <>
       <DataProvider>
         <BrowserRouter>
+        <Header/>
           {/* <Base/> */}
           <Routes>
             <Route path="/login" element={ <Login />} />
