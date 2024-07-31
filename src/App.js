@@ -8,6 +8,7 @@ import Userreg from "./pages/Userreg";
 import DataProvider from "./context/DataProvider";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import MyTable from "./components/MyTable";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <DataProvider>
         <BrowserRouter>
         <Header/>
+        <MyTable/>
           {/* <Base/> */}
           <Routes>
             <Route path="/login" element={ <Login />} />

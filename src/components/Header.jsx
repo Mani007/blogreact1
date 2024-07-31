@@ -35,6 +35,7 @@ function Header() {
               <Typography
                 style={{
                  padding: "10px",
+                 textDecoration: 'none',
                 }}
                 variant="contained"
               >
@@ -44,7 +45,8 @@ function Header() {
             <Link to="/signup">
               <Typography
                 style={{
-                  padding: '10px'
+                  padding: '10px',
+                  textDecoration: 'none',
                 }}
                 variant="contained"
               >
