@@ -34,7 +34,7 @@ function MyTable() {
           {dummydata.map((data) => (
             <tr key={data.id}>
             <td>{data.id}</td>
-            <td>{data.completed}</td>
+            <td>{data.todo}</td>
             <td>{data.userId}</td>
           </tr>
           ))}
