@@ -1,5 +1,24 @@
 import React from "react";
-
+const dummydata = [
+    {
+      "id": 1,
+      "todo": "Do something nice for someone you care about",
+      "completed": false,
+      "userId": 152
+    },
+    {
+      "id": 2,
+      "todo": "Memorize a poem",
+      "completed": true,
+      "userId": 13
+    },
+    {
+      "id": 3,
+      "todo": "Watch a classic movie",
+      "completed": true,
+      "userId": 68
+    }
+  ]
 function MyTable() {
   return (
     <>
@@ -12,16 +31,14 @@ function MyTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>johndoe@example.com</td>
+          {dummydata.map((data) => (
+            <tr key={data.id}>
+            <td>{data.id}</td>
+            <td>{data.completed}</td>
+            <td>{data.userId}</td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Jane Smith</td>
-            <td>janesmith@example.com</td>
-          </tr>
+          ))}
+          
         </tbody>
       </table>
     </>
